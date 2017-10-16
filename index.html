@@ -1,0 +1,66 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css"> 
+
+</head>
+
+
+<body>
+<section id="header">
+<a id = "appslink" href = "#apps" > apps </a>
+<a id = "musiclink" href = "#music" > music </a>
+</section>
+
+
+
+<section id="apps">
+
+	<div class="navbar">
+
+	</div>
+	<div class="frame">
+
+	</div>
+
+</section>
+
+<div class="spacer">
+</div>
+
+<section id="music">
+	<div class="navbar">
+
+	</div>
+	<div class="frame">
+		<iframe src = "music/cervine.html" frameborder = "0" style = "width:100%; height:100%">
+
+		</iframe>
+
+	</div>
+</section>
+
+
+</body>
+
+
+
+<script>
+var lag = 1000;
+$("#appslink").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#apps").offset().top
+    }, lag);
+});
+
+$("#musiclink").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#music").offset().top
+    }, lag);
+});
+</script>
+
+</html>
