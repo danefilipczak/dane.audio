@@ -125,12 +125,37 @@
 <script>
 var lag = 1000;
 
+// focus = setInterval(focusSection, 5000);
+
+function focusSection(){
+	var bodyPos = document.body.scrollTop;
+	var closestDiv;
+	var closest = 100000;
+	$('section').each(function(s){
+		// console.log($('section')[s].scrollTop);
+		var offset = $(this).offset().top;
+		var dist = Math.abs(offset - bodyPos);
+		if(dist<closest){
+			closest = dist;
+			closestDiv = this;
+		}
+
+		// console.log(closestDiv)
+
+	})
+	console.log(closestDiv)
+	$('html, body').animate({
+        scrollTop: $( closestDiv ).offset().top
+    }, lag/2);
+}
+
 
 $(".appbutton").click(function(e){
 	var selected = e.currentTarget.id;
-	$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected)
+	$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
 	$(".appbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
+	setTimeout(focusSection, 500);
 });
 
 $(".albumbutton").click(function(e){
@@ -138,6 +163,7 @@ $(".albumbutton").click(function(e){
 	$("#musicframe").attr("src", "music/" + selected + ".html")
 	$(".albumbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
+	setTimeout(focusSection, 500);
 });
 
 $("#appslink").click(function(e) {
