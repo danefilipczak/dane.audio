@@ -6,13 +6,37 @@
   crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="css/main.css"> 
 
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+
+
 </head>
 
 
 <body>
 <section id="header">
-<a id = "appslink" href = "#apps" > apps </a>
-<a id = "musiclink" href = "#music" > music </a>
+
+
+
+	<a id = "appslink" class="anchor" href = "#apps" > 
+		<img src="assets/apps.png">
+		<br>
+		apps 
+	</a>
+	<a id = "musiclink" class="anchor" href = "#music" >
+		<img src="assets/note.png">
+		<br>
+		music
+	</a>
+
+	<a id = "aboutlink" class="anchor" href = "#about" >
+		<img src="assets/dude.png">
+		<br>
+		about
+	</a>
+
+
+
+
 </section>
 
 
@@ -20,6 +44,15 @@
 <section id="apps">
 
 	<div class="navbar">
+
+		<img src="assets/lufttonnetz.png">
+		</img>
+
+		<img src="assets/caasi.png">
+		</img>
+
+		<img src="assets/circadian.png">
+		</img>
 
 	</div>
 	<div class="frame">
@@ -29,18 +62,55 @@
 </section>
 
 <div class="spacer">
+	<img src="assets/note.png"></img>
 </div>
 
 <section id="music">
 	<div class="navbar">
+		<br>solo:
+		<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
+		<img id = "dude" class = "albumbutton" src = "assets/dude.png">
+		<br><br>with my brother, Stone:
 
 	</div>
 	<div class="frame">
-		<iframe src = "music/cervine.html" frameborder = "0" style = "width:100%; height:100%">
+		<iframe id="musicframe" src = "music/landing.html" frameborder = "0" style = "width:100%; height:100%">
 
 		</iframe>
 
 	</div>
+</section>
+
+<div class="spacer">
+	<img src="assets/dude.png"></img>
+</div>
+
+
+<section id="about">
+
+<div>
+	to describe myself in wikipedia articles:<br>
+	<ul>
+		<li><a  target="_blank" href="https://en.wikipedia.org/wiki/Fire_ecology">Fire Ecology</a></li>
+		<li><a  target="_blank" href="https://en.wikipedia.org/wiki/Zeitgeber">Zeitgeber</a></li>
+		<li><a  target="_blank" href="https://en.wikipedia.org/wiki/Heterophony">Heterophony</a></li>
+
+
+	</ul>
+</div>
+
+<div>
+	dane@imaginationrock.com
+	<br>
+	<a href="https://github.com/dfilipczak">github</a>
+	<br>
+	<a href = "https://twitter.com/danefilipczak">twitter</a>
+</div>
+
+<div style = "max-width:40%">
+	I'm interested in music, interfaces/instruments, biologically-inspired computation, ethics and architecture.
+</div>
+
 </section>
 
 
@@ -50,15 +120,33 @@
 
 <script>
 var lag = 1000;
-$("#appslink").click(function() {
+
+$(".albumbutton").click(function(e){
+	var selected = e.currentTarget.id;
+	$("#musicframe").attr("src", "music/" + selected + ".html")
+	$(".albumbutton").removeClass('selected');
+	$("#" + selected).addClass('selected');
+});
+
+$("#appslink").click(function(e) {
+	e.preventDefault()
     $('html, body').animate({
         scrollTop: $("#apps").offset().top
     }, lag);
 });
 
-$("#musiclink").click(function() {
+$("#musiclink").click(function(e) {
+	e.preventDefault()
     $('html, body').animate({
         scrollTop: $("#music").offset().top
+    }, lag);
+});
+
+
+$("#aboutlink").click(function(e) {
+	e.preventDefault()
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top
     }, lag);
 });
 </script>
