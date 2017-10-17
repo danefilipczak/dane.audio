@@ -15,10 +15,12 @@
 <body>
 <section id="header">
 
+	<a>Dane Filipczak</a>
+
 
 
 	<a id = "appslink" class="anchor" href = "#apps" > 
-		<img src="assets/apps.png">
+		<img src="assets/dude.png">
 		<br>
 		apps 
 	</a>
@@ -45,17 +47,19 @@
 
 	<div class="navbar">
 
-		<img src="assets/lufttonnetz.png">
+		<img id = "Lufttonnetz" class = "appbutton" src="assets/lufttonnetz.png">
 		</img>
 
-		<img src="assets/caasi.png">
+		<img id = "caasi" class = "appbutton" src="assets/caasi.png">
 		</img>
 
-		<img src="assets/circadian.png">
+		<img id = "circadian" class = "appbutton" src="assets/circadian.png">
 		</img>
 
 	</div>
 	<div class="frame">
+		<iframe id="appframe" src = "apps/landing.html" frameborder = "0" style = "width:100%; height:100%">
+		</iframe>
 
 	</div>
 
@@ -108,7 +112,7 @@
 </div>
 
 <div style = "max-width:40%">
-	I'm interested in music, interfaces/instruments, biologically-inspired computation, ethics and architecture.
+	I'm interested in music, interfaces/instruments, biologically-inspired computation and ethics.
 </div>
 
 </section>
@@ -120,6 +124,14 @@
 
 <script>
 var lag = 1000;
+
+
+$(".appbutton").click(function(e){
+	var selected = e.currentTarget.id;
+	$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected)
+	$(".appbutton").removeClass('selected');
+	$("#" + selected).addClass('selected');
+});
 
 $(".albumbutton").click(function(e){
 	var selected = e.currentTarget.id;

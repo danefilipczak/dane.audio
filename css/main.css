@@ -12,7 +12,25 @@ body {
 	/*argin:0;*/
 }
 
+.albumbutton:hover{
+	cursor:pointer;
+}
+
 .albumbutton {
+	width:140px;
+	border:5px;
+	border-style:solid;
+	border-color:white;
+
+	
+}
+
+.appbutton:hover{
+	cursor:pointer;
+}
+
+
+.appbutton {
 	width:140px;
 	border:5px;
 	border-style:solid;
