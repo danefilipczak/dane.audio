@@ -14,6 +14,8 @@ body {
 
 .albumbutton:hover{
 	cursor:pointer;
+	-webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
 }
 
 .albumbutton {
@@ -21,12 +23,17 @@ body {
 	border:5px;
 	border-style:solid;
 	border-color:white;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 
 	
 }
 
 .appbutton:hover{
 	cursor:pointer;
+	/*border-style:d;*/
+	/*border-color:black;*/
+	
 }
 
 
@@ -48,6 +55,8 @@ body {
 	border-style:solid;
 	border-color:yellow;
 	border-width:5px;
+	-webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
 }
 
 #music {
