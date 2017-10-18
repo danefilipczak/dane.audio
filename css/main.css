@@ -39,6 +39,9 @@ body {
 	
 }
 
+.returnhome:hover{
+	cursor:pointer;
+}
 
 .selected {
 	width:140px;

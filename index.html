@@ -25,11 +25,11 @@
 		apps 
 	</a>
 
-	<!-- <a id = "musiclink" class="anchor" href = "#music" >
+	<a id = "musiclink" class="anchor" href = "#music" >
 		<img src="assets/note.png">
 		<br>
 		music
-	</a> -->
+	</a>
 
 	<a id = "aboutlink" class="anchor" href = "#about" >
 		<img src="assets/dude.png">
@@ -70,15 +70,34 @@
 </section>
 
 <div class="spacer">
-	<img src="assets/note.png"></img>
+	<img class="returnhome" src="assets/note.png"></img>
 </div>
 
 <section id="music">
 	<div class="navbar">
-		<br>solo:
-		<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
-		<img id = "dude" class = "albumbutton" src = "assets/dude.png">
-		<br><br>with my brother, Stone:
+		<!-- <div style = "height:10%" -->
+		<div style = "height:50%">
+			<div style = "max-height:10%; overflow:scroll">
+				<br>solo:<br>
+			</div>
+			<div style = "max-height:90%; overflow:scroll">
+				<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
+				<img id = "dude" class = "albumbutton" src = "assets/dude.png">
+				<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
+				<img id = "dude" class = "albumbutton" src = "assets/dude.png">
+			</div>
+		</div>
+		<div style = "height:50%">
+			<div style = "max-height:10%; overflow:scroll">
+				with my brother, Stone:
+			</div>
+			<div style = "max-height:90%; overflow:scroll">
+				<img id = "cervine1" class = "albumbutton" src = "assets/cervine.jpg">
+				<img id = "dude" class = "albumbutton" src = "assets/dude.png">
+				<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
+				<img id = "dude" class = "albumbutton" src = "assets/dude.png">
+			</div>
+		</div>
 
 	</div>
 	<div class="frame">
@@ -90,7 +109,7 @@
 </section>
 
 <div class="spacer">
-	<img src="assets/dude.png"></img>
+	<img class="returnhome" src="assets/dude.png"></img>
 </div>
 
 
@@ -131,6 +150,10 @@ var lag = 1000;
 
 // focus = setInterval(focusSection, 5000);
 
+// $("body").scroll(function(){
+// 	$('html, body').stop()
+// })
+
 function focusSection(){
 	var bodyPos = document.body.scrollTop;
 	var closestDiv;
@@ -153,6 +176,13 @@ function focusSection(){
     }, lag/2);
 }
 
+$( '.navbar' ).mouseenter( function(){
+	document.body.style.overflow = 'hidden';
+	// console.log('in');
+} ).mouseleave( function(){
+	document.body.style.overflow = 'auto';
+	// console.log('out');
+} );
 
 $(".appbutton").click(function(e){
 	var selected = e.currentTarget.id;
@@ -189,6 +219,14 @@ $("#aboutlink").click(function(e) {
 	e.preventDefault()
     $('html, body').animate({
         scrollTop: $("#about").offset().top
+    }, lag);
+});
+
+
+$(".returnhome").click(function(e) {
+	e.preventDefault()
+    $('html, body').animate({
+        scrollTop: $("#header").offset().top
     }, lag);
 });
 </script>
