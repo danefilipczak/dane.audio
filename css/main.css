@@ -2,6 +2,8 @@ body {
 	/*background-color:olive;*/
 	margin:0;
 	font-family:'Ubuntu Mono';
+	/*overflow-x:hidden;*/
+	/*overflow-y: scroll;*/
 }
 
 #apps {
@@ -37,16 +39,17 @@ body {
 }
 
 .albumbar {
-	overflow:scroll;
+	/*overflow-y:scroll;*/
+	overflow-x:hidden;
 
 
-	height: -moz-calc(100% - 40px);
+	height: -moz-calc(100% - 50px);
 
-	height: -webkit-calc(100% - 40px);
+	height: -webkit-calc(100% - 50px);
 
-	height: -o-calc(100% - 40px);
+	height: -o-calc(100% - 50px);
 
-	height: calc(100% - 40px);
+	height: calc(100% - 50px);
 
 }
 
@@ -132,7 +135,7 @@ body {
 }
 
 .navbar {
-	overflow:scroll;
+	/*overflow:scroll;*/
 	text-align:center;
 	height:100%;
 	width:150px;
