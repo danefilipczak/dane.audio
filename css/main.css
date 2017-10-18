@@ -36,6 +36,19 @@ body {
 	
 }
 
+.albumbar {
+	overflow:scroll;
+
+
+	height: -moz-calc(100% - 40px);
+
+	height: -webkit-calc(100% - 40px);
+
+	height: -o-calc(100% - 40px);
+
+	height: calc(100% - 40px);
+
+}
 
 .appbutton {
 	width:140px;
