@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<title>kaolin pigeon</title>
+
+
+</head>
+
+<body>
+
+<div class = "main">
+
+	<section class="sidebar">
+		<br>
+		<span class="title" v-show="vernacular">
+			
+				{{vernacular}}
+			
+		</span>
+		<br><br>
+		<span class="title" v-show="scientific">
+			
+				<i>{{scientific}}</i>
+			
+		</span>
+
+
+		<!-- Rounded switch -->
+		<div class="switchLabel">
+			<span class = "label">
+				Threats
+				<label class="switch">
+		  			<input type="checkbox" v-model="showThreats">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="fade">
+			<div class="info" v-if="showThreats">
+				<ul>
+				<li v-for="threat in threats">
+					{{ threat.title }}
+				</li>
+				</ul>
+			</div>
+		</transition>
+
+		<div class="switchLabel">
+			<span class = "label">
+				Countries
+				<label class="switch">
+		  			<input type="checkbox" v-model="showCountries">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="fade">
+			<div class="info" v-if="showCountries">
+			<ul>
+			<li v-for="country in countries">
+				{{ country }}
+			</li>
+			</ul>
+		</div>
+		</transition>
+	</section>
+
+
+	<section class="topbar">
+		
+		<div class="excerpt">
+			<span>
+				{{excerpt}}
+			</span>
+		</div>
+		
+
+
+		
+		
+		<img v-bind:src="imgSrc" class="image"></img>
+
+		<div class="taxonomyContainer">
+			<div class="taxonomy">
+				something abot genus
+			</div>
+			<div class="taxonomy">
+				something abot kingdom
+			</div>
+			<div class="taxonomy">
+				something abot phylum
+			</div>
+			<div class="taxonomy">
+				something abot order
+			</div>
+			<div class="taxonomy">
+				something aot species
+			</div>
+		</div>
+	</section>
+	
+	
+</div>
+
+
+<div id = "map"></div>
+
+
+
+
+
+
+
+<script src = "js/libs/vue.js"></script>
+<script src = "js/libs/jquery.js"></script>
+<!-- <script src =  -->
+<script src = "js/species.js"></script>
+<script src = "js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9_E2_FWgeaa-_JdeRo1CUvNfl5xgevj0&v=3&callback=initMap"></script>
+
+
+<script type='text/javascript' src = "js/app.js"></script>
+</body>
+
+</html>
