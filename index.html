@@ -51,7 +51,7 @@
 		<img id = "Lufttonnetz" class = "appbutton" src="assets/lufttonnetz.png">
 		</img>
 
-		<img id = "kaolin-pigeon" class = "appbutton" src="assets/earthworm.png">
+		<img id = "kaolin_pigeon" class = "appbutton" src="assets/earthworm.png">
 		</img>
 
 		<img id = "caasi" class = "appbutton" src="assets/caasi.png">
@@ -189,7 +189,12 @@ $( '.navbar' ).mouseenter( function(){
 
 $(".appbutton").click(function(e){
 	var selected = e.currentTarget.id;
-	$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
+	if (selected == 'kaolin_pigeon'){
+		$("#appframe").attr("src", "http://dane.audio/" + selected)
+	} else {
+		$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
+	}
+	
 	$(".appbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
 	setTimeout(focusSection, 500);
