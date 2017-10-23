@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+<title>kaolin pigeon</title>
+
+
+</head>
+
+<body>
+
+<div class = "main">
+
+	<section class="sidebar">
+		<br>
+		<span class="title" v-show="vernacular">
+			
+				{{vernacular}}
+			
+		</span>
+		<br><br>
+		<span class="title" v-if="scientific">
+			
+				<i>{{scientific}}</i>
+			
+		</span>
+
+		<div class="taxonomy">
+
+			<div class="taxon" v-show="kingdom">
+				<span class = "taxonLabel">
+					Kingdom
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ kingdom }}
+				</span>
+			</div>
+
+			<div class="taxon" v-show="phylum">
+				<span class = "taxonLabel">
+					Phylum
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ phylum }}
+				</span>
+			</div>
+
+			<div class="taxon" v-show="klass">
+				<span class = "taxonLabel">
+					Class
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ klass }}
+				</span>
+			</div>
+
+			<div class="taxon" v-show="order">
+				<span class = "taxonLabel">
+					Order
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ order }}
+				</span>
+			</div>
+
+			<div class="taxon" v-show="family">
+				<span class = "taxonLabel">
+					Family
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ family }}
+				</span>
+			</div>
+
+			<div class="taxon" v-show="genus">
+				<span class = "taxonLabel">
+					Genus
+				</span>
+				<br>
+				<span class="taxonName">
+					{{ genus }}
+				</span>
+			</div>
+
+		</div>
+
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<!-- Rounded switch -->
+		<div class="switchLabel" v-show="threats">
+			<span class = "label">
+				Threats Imposed by Humans
+				<label class="switch">
+		  			<input type="checkbox" v-model="showThreats">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="expand">
+			<div class="info" v-if="showThreats">
+				<ul>
+				<li v-for="threat in threats">
+					<span class = "listText">
+						{{ threat.title }}
+					</span>
+					<br><br>
+				</li>
+				</ul>
+			</div>
+		</transition>
+
+		<div class="switchLabel" v-show="countries">
+			<span class = "label">
+				Countries
+				<label class="switch">
+		  			<input type="checkbox" v-model="showCountries">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="expand">
+			<div class="info" v-show="showCountries" transition="expand">
+				<ul>
+				<li v-for="country in countries">
+					<span class = "listText">
+						{{ country }}
+					</span>
+					<br><br>
+				</li>
+				</ul>
+			</div>
+		</transition>
+	</section>
+
+
+	<section class="topbar">
+		
+		<div class="excerpt">
+			<span>
+				{{excerpt}}
+			</span>
+		</div>
+		
+
+
+		
+		
+		<img v-bind:src="imgSrc" class="image"></img>
+
+	
+	</section>
+	
+	
+</div>
+
+
+<div id = "map"></div>
+
+
+
+
+
+
+
+<script src = "js/libs/vue.js"></script>
+<script src = "js/libs/jquery.js"></script>
+<!-- <script src =  -->
+<script src = "world.geo.json"></script>
+<script src = "js/species.js"></script>
+<script src = "js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9_E2_FWgeaa-_JdeRo1CUvNfl5xgevj0&v=3&callback=initMap"></script>
+
+
+<script type='text/javascript' src = "js/app.js"></script>
+</body>
+
+</html>

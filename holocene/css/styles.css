@@ -8,18 +8,26 @@
 	/*z-index:-2;*/
 }
 
+ul {
+	color:white;
+
+}
+li {
+	font-size:40px;
+	line-height:15px;
+}
 
 .main {
 	position:fixed;
 	/*background-color:white;
 	opacity:0.618;*/
-	background-color: rgba(87, 255, 255, 0.69);
+	/*background-color: rgba(87, 255, 255, 0.69);*/
 	width:100%;
 	/*top:61.8%;*/
 	/*height:28.2%;*/
 	/*z-index:1;*/
 	
-	font-family:monospace;
+	font-family:'Ubuntu Mono';
 
   	
   	/*align-items: center;*/
@@ -29,33 +37,50 @@
 
 .taxonomy {
 
-	max-height:100px;
+
+
+	/*max-height:100px;
 	max-width:200px;
-	overflow:scroll;
-	border-style:solid;
+	/*overflow:scroll;*/
+	/*border-style:solid;
 	padding:5px;
 	font-size:14px;
-	background-color: rgba(25, 255, 255, 0.1)
+	background-color: rgba(25, 255, 255, 0.1)*/*/
 	/*border:5px;*/
 
 }
 
-.taxonomyContainer {
-	width:100%;
-	/*background-color:green;*/
-	display: flex; /* or inline-flex */
-  	justify-content: space-around;
-  	flex-wrap: wrap;
+.taxon {
+	margin:10px;
+}
+
+.taxonName {
+	background-color:white;
+	padding-left:30px;
+	font-size:20px;
+}
+
+.taxonName:hover{
+	cursor:pointer;
+}
+
+.taxonLabel{
+	font-size:15px;
+	background-color:black;
+	color:white;
+	padding-right:50px;
+	padding-left:5px;
 }
 
 .excerpt {
-	font-size:16px;
+	font-size:20px;
 	max-width:61%;
-	max-height:180px;
-	overflow:scroll;
+	/*max-height:180px;*/
+	overflow-y:scroll;
 	margin:0px;
 	padding:10px;
-	background-color: rgba(25, 255, 255, 0.1)
+	background-color: rgba(25, 255, 255, 0.8)
+	/*background-color:0.9;*/
 }
 
 .title {
@@ -65,35 +90,49 @@
 	padding:3px;
 }
 
+.listText {
+	background-color:white;
+	font-size:20px;
+	color:black;
+	padding-left:30px;
+	/*padding:10px;*/
+}
+
 .info {
+	position:relative;
 	max-height:100px;
-	max-width:200px;
-	overflow:scroll;
-	border-style:solid;
-	padding:5px;
-	font-size:14px;
-	background-color: rgba(25, 255, 255, 0.1)
+	/*max-width:300px;*/
+	width:30vw;
+	overflow:auto;
+	/*border-style:solid;*/
+	/*padding:10px;*/
+	padding-left:50px;
+	font-size:20px;
+	/*background-color: rgba(25, 255, 255, 0.5)*/
 	/*border:5px;*/
 }
 
 .sidebar {
+	z-index:1;
 	position:fixed;
 	left:0px;
 	top:0px;
-	height:100%;
+	/*height:100%;*/
 	width:200px;
 	text-align:right;
-	background-color: rgba(255, 255, 255, 0.68);
+	/*background-color: rgba(255, 255, 255, 0.68);*/
 }
 
 .topbar {
 	position:fixed;
 	left:200px;
 	top:0px;
-	display: flex; /* or inline-flex */
+	max-height:180px;
+	width:100%;
+	/*display: flex; /* or inline-flex */
   	justify-content: space-around;
-  	flex-wrap: wrap;
-  	background-color: rgba(255, 255, 255, 0.68);
+  	flex-wrap: wrap;*/
+  	/*background-color: rgba(255, 255, 255, 0.68);*/
 }
 
 
@@ -111,7 +150,7 @@ ul {
 
 .image {
 	max-width:200px;
-	max-height:200px;
+	max-height:170px;
 	opacity:1;
 }
 .switch {
@@ -183,11 +222,45 @@ input:checked + .slider:before {
 	background-color:white;
 }
 
-.fade-enter-active, .fade-leave-active {
+/*.fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
   transition: height .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0,
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+
+/*  opacity: 0,
   height:100%;
 }
+*/
+
+.expand-enter-active {
+  transition: all .5s;
+  max-height: 100px;
+  /*opacity:0.5;*/
+  /*transition: height .5s*/
+}
+
+/*.expand-leave-active{
+	transition: all .5s;
+	max-height:0px;
+}*/
+.expand-enter, .expand-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  /*opacity: 0;*/
+  max-height:0px;
+  /*height: 0;*/
+}
+/*
+.expand-transition {
+  transition: all 3s ease;
+  /*height: auto;*/
+ /* padding: 10px;
+  background-color: #eee;
+  overflow: hidden;*/
+}
+ .expand-enter defines the starting state for entering 
+/* .expand-leave defines the ending state for leaving */
+.expand-enter, .expand-leave {
+  height: 0px;
+  /*padding: 0 10px;*/
+  opacity: 0;
+}*/

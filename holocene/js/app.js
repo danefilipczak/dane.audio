@@ -8,6 +8,7 @@
 var vm = new Vue({
 	el: '.main',
 	data: {
+		species: null,
 		vernacular: null,
 		scientific: null,
 		countries: null,
@@ -15,8 +16,26 @@ var vm = new Vue({
 		imgSrc: '',
 		excerpt: null,
 		showThreats: false,
-		showCountries: false
-	}
+		showCountries: false,
+		kingdom: null,
+		phylum: null,
+		klass: null,
+		order: null,
+		family: null,
+		genus: null
+
+	},
+	// watch: {
+	// 	species: function(newSpecies, old) {
+	// 		//to work with changes in someOtherProp
+	// 		this.threats = newSpecies.threats;
+	// 		this.countries = newSpecies.countries;
+	// 		console.log('changing' + newSpecies)
+	// 	},
+	// 	'species.countries': function(newVal, oldVal) {
+	// 		//to work with changes in prop
+	// 	}
+	// }
 })
 
 // speciesData = [{
@@ -48,7 +67,9 @@ window.onload = function() {
 
 	highlightCountries([]);
 
-	love = new Species('red panda');
+	// love = new Species('red panda');
+	var panda = new Species('eastern gorilla');
+	vm.species = panda;
 
 
 }
