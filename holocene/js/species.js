@@ -5,21 +5,29 @@
 
 function Species(input) {
 
+	var strictBounds = new google.maps.LatLngBounds(
+		new google.maps.LatLng(85 * 0.7, -180 * 0.7), // top left corner of map
+		new google.maps.LatLng(-85 * 0.7, 180 * 0.7) // bottom right corner
+	);
+
+	map.fitBounds(strictBounds);
+
+	vm.species = null;
 	vm.excerpt = null;
 	vm.scientific = null
-	// species: null,
+		// species: null,
 	vm.vernacular = null;
 	vm.scientific = null;
 	vm.countries = null;
 	vm.threats = null;
-	vm.imgSrc = '';
+	vm.imgSrc = null;
 	vm.excerpt = null;
 	vm.kingdom = null;
 	vm.phylum = null;
 	vm.klass = null;
 	vm.order = null;
 	vm.genus = null;
-	vm.family= null;
+	vm.family = null;
 
 	var self = this;
 	this.input = input;
@@ -209,7 +217,8 @@ Species.prototype.getWikiExcerpt = function(article) {
 			var excerpt = r.query.pages[pageId].extract;
 
 			self.excerpt = excerpt;
-			vm.excerpt = self.excerpt;
+			vm.spiels['species'] = self.excerpt;
+			vm.excerpt = vm.spiels.species;
 		},
 		error: function() {
 			self.excerpt = 'Information on this species could not be retrieved.'
@@ -346,17 +355,74 @@ Species.prototype.parseTaxonomy = function() {
 	console.log('info for taxonomy parsing');
 	console.log(this.taxonomy);
 	vm.kingdom = this.taxonomy[0].kingdom.toLowerCase();
-	console.log(vm.kingdom)
+	this.getTaxonEndpoint('kingdom', vm.kingdom);
 	vm.phylum = this.taxonomy[0].phylum.toLowerCase();
-	console.log(vm.phylum)
+	this.getTaxonEndpoint('phylum', vm.phylum);
 	vm.klass = this.taxonomy[0].class.toLowerCase();
-	console.log(vm.class)
+	this.getTaxonEndpoint('class', vm.klass);
 	vm.order = this.taxonomy[0].order.toLowerCase();
-	console.log(vm.order)
+	this.getTaxonEndpoint('order', vm.order);
 	vm.family = this.taxonomy[0].family.toLowerCase();
-	console.log(vm.family)
+	this.getTaxonEndpoint('family', vm.family);
 	vm.genus = this.taxonomy[0].genus.toLowerCase();
-	console.log(vm.genus)
+	this.getTaxonEndpoint('genus', vm.genus);
+}
+
+Species.prototype.getTaxonEndpoint = function(taxonType, title_) {
+	//Follows wikipedia redirects and returns the final article endpoint. 
+	//usefull for converting scientific names into vernacular names. 
+	var self = this;
+	// var url = 'https://en.wikipedia.org/w/api.php?&format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + article;
+	var url = 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title_ + '&redirects&format=json';
+	$.ajax({
+		url: url,
+		dataType: "jsonp",
+		success: function(r) {
+			// var pageId = r.query.pages;
+			// pageId = Object.keys(pageId)[0];
+			// var excerpt = r.query.pages[pageId].extract;
+
+			// self.excerpt = excerpt;
+			var pageId = r.query.pages;
+			pageId = Object.keys(pageId)[0];
+			//console.log(r);
+			//console.log(r.query.pages[pageId].title);
+			// self.vernacular = r.query.pages[pageId].title;
+			// vm.vernacular = self.vernacular;
+			self.getTaxonExcerpt(r.query.pages[pageId].title, taxonType);
+			// self.getWikiImgSrc(self.vernacular);
+			// self.getTaxonomy(self.input);
+		},
+		error: function() {
+			console.log('there was an error resolving wikipedia redirects')
+		}
+	})
+
+}
+
+Species.prototype.getTaxonExcerpt = function(article, taxonType) {
+	var self = this;
+	var url = 'https://en.wikipedia.org/w/api.php?&format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + article;
+	$.ajax({
+		url: url,
+		dataType: "jsonp",
+		success: function(r) {
+			var pageId = r.query.pages;
+			pageId = Object.keys(pageId)[0];
+			var excerpt = r.query.pages[pageId].extract;
+
+			// self.excerpt = excerpt;
+			vm.spiels[taxonType] = excerpt;
+		},
+		error: function() {
+			self.excerpt = 'Information on this species could not be retrieved.'
+		}
+	})
+}
+
+Species.prototype.getSpiel = function(taxonType, name) {
+
+	// vm.spiels[taxonType] = ??
 }
 
 Array.prototype.flatten = function() {
@@ -379,12 +445,12 @@ Species.prototype.setMap = function() {
 	})
 
 	console.log('for mapppp')
-	
+
 
 	var countryPoints = [];
 	iso3Array.forEach(function(c) {
-		world.features.forEach(function(f){
-			if(f.id == c){
+		world.features.forEach(function(f) {
+			if (f.id == c) {
 				countryPoints.push(f.geometry.coordinates)
 			}
 		})
@@ -398,8 +464,8 @@ Species.prototype.setMap = function() {
 
 
 
-	for (i = 0; i < countryPoints.length; i+=2) {
-		bound.extend(new google.maps.LatLng(countryPoints[i+1], countryPoints[i]));
+	for (i = 0; i < countryPoints.length; i += 2) {
+		bound.extend(new google.maps.LatLng(countryPoints[i + 1], countryPoints[i]));
 
 		// OTHER CODE
 	}

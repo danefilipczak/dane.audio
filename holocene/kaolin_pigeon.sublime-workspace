@@ -15,7 +15,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2265,
+				"buffer_size": 7730,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -24,7 +24,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 4405,
+				"buffer_size": 4412,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -33,7 +33,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 2223,
+				"buffer_size": 5105,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -42,7 +42,7 @@
 			"file": "world.geo.json",
 			"settings":
 			{
-				"buffer_size": 256949,
+				"buffer_size": 256961,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -71,7 +71,7 @@
 			"file": "js/species.js",
 			"settings":
 			{
-				"buffer_size": 9859,
+				"buffer_size": 13965,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -80,7 +80,7 @@
 			"file": "css/styles.css",
 			"settings":
 			{
-				"buffer_size": 2888,
+				"buffer_size": 7732,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -118,9 +118,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/danefilipczak/Developer/kaolin_pigeon",
-		"/Users/danefilipczak/Developer/kaolin_pigeon/css",
-		"/Users/danefilipczak/Developer/kaolin_pigeon/js"
+		"/Users/danefilipczak/Developer/holocene"
 	],
 	"file_history":
 	[
@@ -169,6 +167,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"imgSrc",
+			"vm.excerpt",
+			"image",
+			"shadow",
+			"image",
+			"excerpt",
+			"this.getSpiel",
+			"vm.genus",
+			"taxon",
+			"label",
 			"taxonomy",
 			"self.scientific",
 			"countries",
@@ -187,6 +195,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"this.getTaxonEndpoint",
 			"self",
 			"n",
 			"nodes[i]"
@@ -200,7 +209,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -209,20 +218,79 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2265,
+						"buffer_size": 7730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								394,
-								394
+								6109,
+								4955
 							]
 						],
 						"settings":
 						{
+							"spell_check": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3542.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/map.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1939,
+								1939
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -233,78 +301,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "js/map.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3376,
-								3376
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								283,
-								283
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
 					"file": "world.geo.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 256949,
+						"buffer_size": 256961,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								175372,
-								175372
+								0,
+								0
 							]
 						],
 						"settings":
@@ -346,7 +356,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -362,14 +372,43 @@
 						"selection":
 						[
 							[
-								37523,
-								37525
+								52648,
+								52661
 							]
 						],
 						"settings":
 						{
 							"auto_name": "[{\"name\":\"Afghanistan\",\"alpha-2\":\"AF\",\"alpha-3\":\"A",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 44221.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/species.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								647,
+								647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -380,49 +419,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "js/species.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9859,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								959,
-								959
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 210.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
 					"buffer": 7,
 					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2888,
+						"buffer_size": 7732,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								604,
-								604
+								2151,
+								2151
 							]
 						],
 						"settings":
@@ -435,7 +445,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

@@ -11,7 +11,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5285,
+				"buffer_size": 5552,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -20,7 +20,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 2317,
+				"buffer_size": 2346,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -47,7 +47,7 @@
 			"file": "music/landing.html",
 			"settings":
 			{
-				"buffer_size": 665,
+				"buffer_size": 674,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -56,7 +56,7 @@
 			"file": "apps/landing.html",
 			"settings":
 			{
-				"buffer_size": 335,
+				"buffer_size": 344,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -92,6 +92,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/danefilipczak/Developer/dane.audio",
+		"/Users/danefilipczak/Developer/dane.audio/apps"
+	],
 	"file_history":
 	[
 		"/Users/danefilipczak/Developer/force-directed_graph/node.js",
@@ -155,15 +160,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5285,
+						"buffer_size": 5552,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4169,
-								4169
+								1043,
+								1043
 							]
 						],
 						"settings":
@@ -172,7 +177,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3356.0,
+						"translation.y": 671.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -184,15 +189,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2317,
+						"buffer_size": 2346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								648,
-								648
+								495,
+								495
 							]
 						],
 						"settings":
@@ -201,7 +206,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 376.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -232,7 +237,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -260,7 +265,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -269,15 +274,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 665,
+						"buffer_size": 674,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								279,
-								279
+								180,
+								180
 							]
 						],
 						"settings":
@@ -289,7 +294,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -298,15 +303,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 335,
+						"buffer_size": 344,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								202,
-								202
+								207,
+								324
 							]
 						],
 						"settings":
