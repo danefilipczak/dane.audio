@@ -22,7 +22,7 @@
 	<a id = "appslink" class="anchor" href = "#apps" > 
 		<img style = "width:100px" src="assets/wrench.jpg">
 		<br>
-		apps 
+		applications 
 	</a>
 
 	<a id = "musiclink" class="anchor" href = "#music" >
@@ -51,8 +51,13 @@
 		<img id = "Lufttonnetz" class = "appbutton" src="assets/lufttonnetz.png">
 		</img>
 
-		<img id = "holocene" class = "appbutton" src="assets/earthworm.png">
-		</img>
+		<div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "appbutton">
+		<br><br>bodytalk.blue
+		</div>
+
+		<div id = "holocene" style = "width:150px; height:150px; vertical-align:middle" class = "appbutton">
+		<br><br>holocene
+		</div>
 
 		<img id = "caasi" class = "appbutton" src="assets/caasi.png">
 		</img>
@@ -92,7 +97,7 @@
 		</div>
 		<div style = "height:50%">
 			<div style = "height:40px">
-				with my brother, Stone:
+				with others:
 			</div>
 			<div class="albumbar">
 				<img id = "hard" class = "albumbutton" src = "assets/hard.jpg">
@@ -191,7 +196,9 @@ $(".appbutton").click(function(e){
 	var selected = e.currentTarget.id;
 	if (selected == 'holocene'){
 		$("#appframe").attr("src", "http://dane.audio/" + selected)
-	} else {
+	} else if (selected == 'bodytalk'){
+		$("#appframe").attr("src", "http://bodytalk.blue");
+	}  else {
 		$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
 	}
 	
