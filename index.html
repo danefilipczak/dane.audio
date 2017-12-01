@@ -15,15 +15,15 @@
 <body>
 <section id="header">
 
-	<a>Dane Filipczak</a>
+	<!-- <a style="font-family:arial">Dane Filipczak</a> -->
 
 
 
-	<a id = "appslink" class="anchor" href = "#apps" > 
+	<!-- <a id = "appslink" class="anchor" href = "#apps" > 
 		<img style = "width:100px" src="assets/wrench.jpg">
 		<br>
 		applications 
-	</a>
+	</a> -->
 
 	<a id = "musiclink" class="anchor" href = "#music" >
 		<img src="assets/note.png">
@@ -39,38 +39,87 @@
 
 
 
+	<section class="leftDoor">
+		<a id = "quietRoomlink" class="anchor" href = "#quietRoom"> 
+			<img class = "door" src = "assets/door.jpg">
+			</img>
+			<br>
+			quiet room
+		</a>
+	</section>
+	<section class="rightDoor">
+		<a id = "loudRoomlink" class="anchor" href = "#loudRoom"> 
+			<img class = "door" src = "assets/door.jpg">
+			</img>
+			<br>
+			loud room
+		</a>
+	</section>
 
 </section>
 
 
 
-<section id="apps">
+<section id="loudRoom" class="apps">
 
 	<div class="navbar">
 
-		<img id = "Lufttonnetz" class = "appbutton" src="assets/lufttonnetz.png">
-		</img>
+		<div id = "Lufttonnetz" style = "width:150px; height:150px; vertical-align:middle" class = "loudbutton">
+		<br><br>lufttonnetz
+		</div>
 
-		<div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "appbutton">
+		<!-- <div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "appbutton">
 		<br><br>bodytalk.blue
 		</div>
 
 		<div id = "holocene" style = "width:150px; height:150px; vertical-align:middle" class = "appbutton">
 		<br><br>holocene
+		</div> -->
+
+		<div id = "caasi" style = "width:150px; height:150px; vertical-align:middle" class = "loudbutton">
+		<br><br>caasi
 		</div>
 
-		<img id = "caasi" class = "appbutton" src="assets/caasi.png">
-		</img>
+		<div id = "circadian" style = "width:150px; height:150px; vertical-align:middle" class = "loudbutton">
+		<br><br>circadian
+		</div>
 
-		<img id = "circadian" class = "appbutton" src="assets/circadian.png">
-		</img>
-
-		<img id = "earthworm" class = "appbutton" src="assets/earthworm.png">
-		</img>
+		<div id = "earthworm" style = "width:150px; height:150px; vertical-align:middle" class = "loudbutton">
+		<br><br>earthworm
+		</div>
 
 	</div>
 	<div class="frame">
-		<iframe id="appframe" src = "apps/landing.html" frameborder = "0" style = "width:100%; height:100%">
+		<iframe id="loudframe" src = "apps/landing.html" frameborder = "0" style = "width:100%; height:100%">
+
+		</iframe>
+
+	</div>
+
+</section>
+
+<div class="spacer" style="text-align:right;font-family:arial;font-size:20px">
+	<a class="returnhome" style="padding-right:50px">quiet room</a>
+</div>
+
+<section id="quietRoom" class="apps">
+
+	<div class="navbar">
+
+		
+		<div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
+		<br><br>bodytalk.blue
+		</div>
+
+		<div id = "holocene" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
+		<br><br>holocene
+		</div>
+
+		
+
+	</div>
+	<div class="frame">
+		<iframe id="quietframe" src = "apps/landing.html" frameborder = "0" style = "width:100%; height:100%">
 
 		</iframe>
 
@@ -83,7 +132,7 @@
 </div>
 
 <section id="music">
-	<div class="navbar">
+	<div class="albumNavbar">
 		<!-- <div style = "height:10%" -->
 		<div style = "height:50%">
 			<div style = "height:40px">
@@ -135,6 +184,8 @@
 </div>
 
 <div>
+	Dane Filipczak
+	<br>
 	dane@imaginationrock.com
 	<br>
 	<a href="https://github.com/dfilipczak">github</a>
@@ -184,7 +235,7 @@ function focusSection(){
     }, lag/2);
 }
 
-$( '.navbar' ).mouseenter( function(){
+$( '.albumNavbar' ).mouseenter( function(){
 	document.body.style.overflow = 'hidden';
 	// console.log('in');
 } ).mouseleave( function(){
@@ -192,17 +243,52 @@ $( '.navbar' ).mouseenter( function(){
 	// console.log('out');
 } );
 
-$(".appbutton").click(function(e){
+
+$( '#loudframe' ).mouseenter( function(){
+	document.body.style.overflow = 'hidden';
+	// console.log('in');
+} ).mouseleave( function(){
+	document.body.style.overflow = 'auto';
+	// console.log('out');
+} );
+
+
+$( '#quietframe' ).mouseenter( function(){
+	document.body.style.overflow = 'hidden';
+	// console.log('in');
+} ).mouseleave( function(){
+	document.body.style.overflow = 'auto';
+	// console.log('out');
+} );
+
+
+
+$(".loudbutton").click(function(e){
 	var selected = e.currentTarget.id;
 	if (selected == 'holocene'){
-		$("#appframe").attr("src", "http://dane.audio/" + selected)
+		$("#loudframe").attr("src", "http://dane.audio/" + selected)
 	} else if (selected == 'bodytalk'){
-		$("#appframe").attr("src", "http://bodytalk.blue");
+		$("#loudframe").attr("src", "http://bodytalk.blue");
 	}  else {
-		$("#appframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
+		$("#loudframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
 	}
 	
-	$(".appbutton").removeClass('selected');
+	$(".loudbutton").removeClass('selected');
+	$("#" + selected).addClass('selected');
+	setTimeout(focusSection, 500);
+});
+
+$(".quietbutton").click(function(e){
+	var selected = e.currentTarget.id;
+	if (selected == 'holocene'){
+		$("#quietframe").attr("src", "http://dane.audio/" + selected)
+	} else if (selected == 'bodytalk'){
+		$("#quietframe").attr("src", "http://bodytalk.blue");
+	}  else {
+		$("#quietframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
+	}
+	
+	$(".quietbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
 	setTimeout(focusSection, 500);
 });
@@ -219,6 +305,21 @@ $("#appslink").click(function(e) {
 	e.preventDefault()
     $('html, body').animate({
         scrollTop: $("#apps").offset().top
+    }, lag);
+});
+
+
+$("#quietRoomlink").click(function(e) {
+	e.preventDefault()
+    $('html, body').animate({
+        scrollTop: $("#quietRoom").offset().top
+    }, lag);
+});
+
+$("#loudRoomlink").click(function(e) {
+	e.preventDefault()
+    $('html, body').animate({
+        scrollTop: $("#loudRoom").offset().top
     }, lag);
 });
 
