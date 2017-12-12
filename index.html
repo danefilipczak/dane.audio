@@ -41,10 +41,10 @@
 
 	<section class="leftDoor">
 		<a id = "quietRoomlink" class="anchor" href = "#quietRoom"> 
-			<img class = "door" src = "assets/door.jpg">
+			<img class = "okapi" src = "assets/okapi.png">
 			</img>
 			<br>
-			quiet room
+			projects
 		</a>
 	</section>
 	<section class="rightDoor">
@@ -99,12 +99,12 @@
 </section>
 
 <div class="spacer" style="text-align:right;font-family:arial;font-size:20px">
-	<a class="returnhome" style="padding-right:50px">quiet room</a>
+	<a class="returnhome" style="padding-right:50px"></a>
 </div>
 
 <section id="quietRoom" class="apps">
 
-	<div class="navbar">
+	<div class="navbar olive" style="background-color:#768265; color:white">
 
 		
 		<div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
@@ -119,7 +119,7 @@
 
 	</div>
 	<div class="frame">
-		<iframe id="quietframe" src = "apps/landing.html" frameborder = "0" style = "width:100%; height:100%">
+		<iframe id="quietframe" src = "projects/landing.html" frameborder = "0" style = "width:100%; height:100%">
 
 		</iframe>
 
@@ -136,7 +136,7 @@
 		<!-- <div style = "height:10%" -->
 		<div style = "height:50%">
 			<div style = "height:40px">
-				<br>solo:<br>
+				<br>by myself:<br>
 			</div>
 			<div class="albumbar">
 				<img id = "cervine" class = "albumbutton" src = "assets/cervine.jpg">
@@ -157,7 +157,7 @@
 		</div>
 
 	</div>
-	<div class="frame">
+	<div class="frame" style = "left:0px">
 		<iframe id="musicframe" src = "music/landing.html" frameborder = "0" style = "width:100%; height:100%">
 
 		</iframe>
@@ -170,9 +170,9 @@
 </div>
 
 
-<section id="about">
+<section id="about" class="olive">
 
-<div>
+<!-- <div>
 	to describe myself in wikipedia articles:<br>
 	<ul>
 		<li><a  target="_blank" href="https://en.wikipedia.org/wiki/Fire_ecology">Fire Ecology</a></li>
@@ -181,7 +181,7 @@
 
 
 	</ul>
-</div>
+</div> -->
 
 <div>
 	Dane Filipczak
@@ -244,22 +244,13 @@ $( '.albumNavbar' ).mouseenter( function(){
 } );
 
 
-$( '#loudframe' ).mouseenter( function(){
-	document.body.style.overflow = 'hidden';
-	// console.log('in');
-} ).mouseleave( function(){
-	document.body.style.overflow = 'auto';
-	// console.log('out');
-} );
 
 
-$( '#quietframe' ).mouseenter( function(){
-	document.body.style.overflow = 'hidden';
-	// console.log('in');
-} ).mouseleave( function(){
-	document.body.style.overflow = 'auto';
-	// console.log('out');
-} );
+
+
+
+
+
 
 
 
@@ -276,6 +267,14 @@ $(".loudbutton").click(function(e){
 	$(".loudbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
 	setTimeout(focusSection, 500);
+
+	$( '#loudframe' ).mouseenter( function(){
+	document.body.style.overflow = 'hidden';
+	// console.log('in');
+	} ).mouseleave( function(){
+		document.body.style.overflow = 'auto';
+		// console.log('out');
+	} );
 });
 
 $(".quietbutton").click(function(e){
@@ -291,6 +290,14 @@ $(".quietbutton").click(function(e){
 	$(".quietbutton").removeClass('selected');
 	$("#" + selected).addClass('selected');
 	setTimeout(focusSection, 500);
+
+	$( '#quietframe' ).mouseenter( function(){
+	document.body.style.overflow = 'hidden';
+	// console.log('in');
+	} ).mouseleave( function(){
+		document.body.style.overflow = 'auto';
+		// console.log('out');
+	} );
 });
 
 $(".albumbutton").click(function(e){
