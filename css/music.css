@@ -8,6 +8,15 @@ body {
 	color:black;
 }
 
+.projectsSpiel{
+	font-family:arial;
+	/*background-color:red;*/
+	max-width:61.8%;
+}
+
+.projectsSpiel a{
+	color:cyan;
+}
 
 .spiel {
 	max-width:50%;

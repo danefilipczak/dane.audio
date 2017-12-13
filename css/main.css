@@ -117,6 +117,20 @@ body {
     filter: none;
 }
 
+.quietbutton{
+	font-size:18px;
+}
+
+
+.quietselected {
+	width:140px;
+	border-style:solid;
+	border-color:cyan;
+	border-width:5px;
+	-webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
+}
+
 #music {
 	position:relative;
 	/*background-color:cyan;*/

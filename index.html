@@ -107,12 +107,12 @@
 	<div class="navbar olive" style="background-color:#768265; color:white">
 
 		
-		<div id = "bodytalk" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
-		<br><br>bodytalk.blue
+		<div id = "socialbody" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
+		<br><br>social media for the body
 		</div>
 
-		<div id = "holocene" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
-		<br><br>holocene
+		<div id = "ecovis" style = "width:150px; height:150px; vertical-align:middle" class = "quietbutton">
+		<br><br>ecological visualization 
 		</div>
 
 		
@@ -279,25 +279,26 @@ $(".loudbutton").click(function(e){
 
 $(".quietbutton").click(function(e){
 	var selected = e.currentTarget.id;
-	if (selected == 'holocene'){
-		$("#quietframe").attr("src", "http://dane.audio/" + selected)
-	} else if (selected == 'bodytalk'){
-		$("#quietframe").attr("src", "http://bodytalk.blue");
-	}  else {
-		$("#quietframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
-	}
-	
-	$(".quietbutton").removeClass('selected');
-	$("#" + selected).addClass('selected');
+	// if (selected == 'holocene'){
+	// 	$("#quietframe").attr("src", "http://dane.audio/" + selected)
+	// } else if (selected == 'bodytalk'){
+	// 	$("#quietframe").attr("src", "http://bodytalk.blue");
+	// }  else {
+	// 	$("#quietframe").attr("src", "https://dfilipczak.github.io/" + selected + "/index.html")
+	// }
+	$("#quietframe").attr("src", "/projects/" + selected + ".html")
+
+	$(".quietbutton").removeClass('quietselected');
+	$("#" + selected).addClass('quietselected');
 	setTimeout(focusSection, 500);
 
-	$( '#quietframe' ).mouseenter( function(){
-	document.body.style.overflow = 'hidden';
-	// console.log('in');
-	} ).mouseleave( function(){
-		document.body.style.overflow = 'auto';
-		// console.log('out');
-	} );
+	// $( '#quietframe' ).mouseenter( function(){
+	// document.body.style.overflow = 'hidden';
+	// // console.log('in');
+	// } ).mouseleave( function(){
+	// 	document.body.style.overflow = 'auto';
+	// 	// console.log('out');
+	// } );
 });
 
 $(".albumbutton").click(function(e){
