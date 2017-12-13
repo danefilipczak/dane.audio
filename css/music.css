@@ -9,6 +9,7 @@ body {
 }
 
 .projectsSpiel{
+	max-height:90%;
 	font-family:arial;
 	/*background-color:red;*/
 	max-width:61.8%;
